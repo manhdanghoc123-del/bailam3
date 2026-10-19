@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình đơn thả xuống dọc (Vertical Dropdown Menu)</title>
+    <style>
+        /* 1. Đặt font chữ chung và xóa margin/padding mặc định của các danh sách */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 2. Định dạng cho các phần tử danh sách (li) */
+        #menu li {
+            list-style: none; /* Bỏ các ký hiệu đánh dấu đầu danh sách (bullet) */
+            position: relative; /* Cho phép các danh sách con được định vị tương đối theo phần tử mẹ */
+            width: 120px; /* Chiều rộng thẻ li (100px width + 20px padding mỗi bên = tổng 160px) */
+            height: 30px; /* Cố định chiều cao */
+            padding: 0 20px; /* Cố định lề trái và phải cho nội dung */
+            background-color: black; /* Đổi màu nền sang màu đen */
+            line-height: 30px; /* Cố định chiều cao dòng để căn giữa văn bản theo chiều dọc */
+            cursor: pointer; /* Chuyển biểu tượng con trỏ chuột sang hình bàn tay */
+        }
+
+        /* 3. Định dạng cho các liên kết bên trong danh sách (thẻ a) */
+        #menu a {
+            text-decoration: none; /* Bỏ gạch chân của liên kết */
+            color: white; /* Đổi màu liên kết sang màu trắng */
+            display: block;
+        }
+
+        /* 4. Thay đổi màu nền khi di chuột qua phần tử danh sách */
+        #menu li:hover {
+            background-color: #444; /* Đổi sang màu xám xậm khi di chuột qua */
+        }
+
+        /* 5. Định dạng và ẩn các danh sách con (ul bên trong li) */
+        #menu li ul {
+            position: absolute; /* Cố định vị trí xuất hiện của danh sách con */
+            top: 0; /* Căn lề trên bằng với phần tử mẹ */
+            left: 160px; /* Đặt danh sách con xuất hiện ngay bên phải của phần tử mẹ */
+            visibility: hidden; /* Mặc định ẩn danh sách con */
+        }
+
+        /* 6. Hiển thị danh sách con khi di chuột (hover) qua phần tử danh sách ngoài */
+        #menu li:hover > ul {
+            visibility: visible; /* Hiển thị danh sách con tương ứng */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Sản phẩm</a>
+                <ul>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Máy tính bảng</a></li>
+                    <li><a href="#">Laptop</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Dịch vụ</a>
+                <ul>
+                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="#">Sửa chữa</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
